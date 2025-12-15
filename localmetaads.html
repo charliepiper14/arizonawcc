@@ -16,6 +16,8 @@
             --text-light: #64748B;
             --white: #FFFFFF;
             --success: #059669;
+            --warning: #F57F17;
+            --danger: #C62828;
             --gradient-primary: linear-gradient(135deg, #1A3A5C 0%, #2D5A87 100%);
             --gradient-accent: linear-gradient(135deg, #E8A54B 0%, #F4B76B 100%);
         }
@@ -601,177 +603,131 @@
             border-top: 1px solid rgba(255, 255, 255, 0.15);
         }
 
-        /* Slide 8: Projections */
-        .slide-projections {
+        /* Slide 8: Budget Scenarios */
+        .slide-scenarios {
             background: var(--white);
         }
 
-        .projections-table {
+        .scenarios-table {
             width: 100%;
             border-collapse: separate;
             border-spacing: 0;
             margin-top: 40px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(26, 58, 92, 0.08);
         }
 
-        .projections-table th {
+        .scenarios-table th {
             background: var(--primary);
             color: var(--white);
             padding: 20px 24px;
-            text-align: left;
+            text-align: center;
             font-weight: 600;
             font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .projections-table th:first-child {
-            border-radius: 12px 0 0 0;
+        .scenarios-table th:first-child {
+            text-align: left;
         }
 
-        .projections-table th:last-child {
-            border-radius: 0 12px 0 0;
-        }
-
-        .projections-table td {
+        .scenarios-table td {
             padding: 20px 24px;
             border-bottom: 1px solid rgba(26, 58, 92, 0.08);
             font-size: 16px;
+            text-align: center;
         }
 
-        .projections-table tr:nth-child(even) {
-            background: var(--surface);
-        }
-
-        .projections-table tr:last-child td:first-child {
-            border-radius: 0 0 0 12px;
-        }
-
-        .projections-table tr:last-child td:last-child {
-            border-radius: 0 0 12px 0;
-        }
-
-        .projections-table .highlight {
-            background: rgba(232, 165, 75, 0.15);
-        }
-
-        .projections-table .highlight td {
+        .scenarios-table td:first-child {
+            text-align: left;
             font-weight: 600;
             color: var(--primary);
         }
 
-        .metric-good {
-            color: var(--success);
-            font-weight: 600;
-        }
-
-        /* Slide 9: Investment */
-        .slide-investment {
+        .scenarios-table tr:nth-child(even) {
             background: var(--surface);
         }
 
-        .investment-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-        }
-
-        .package-card {
-            background: var(--white);
-            border-radius: 24px;
-            padding: 50px;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 30px rgba(26, 58, 92, 0.08);
-        }
-
-        .package-card.featured {
-            background: var(--gradient-primary);
-            color: var(--white);
-        }
-
-        .package-card.featured::before {
-            content: 'RECOMMENDED';
-            position: absolute;
-            top: 20px;
-            right: -35px;
-            background: var(--accent);
-            color: var(--primary);
-            padding: 8px 50px;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            transform: rotate(45deg);
-        }
-
-        .package-name {
-            font-family: 'Playfair Display', serif;
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .package-desc {
-            font-size: 15px;
-            opacity: 0.8;
-            margin-bottom: 30px;
-        }
-
-        .package-price {
-            font-family: 'Playfair Display', serif;
-            font-size: 56px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .package-card:not(.featured) .package-price {
-            color: var(--primary);
-        }
-
-        .package-period {
-            font-size: 14px;
-            opacity: 0.7;
-            margin-bottom: 32px;
-        }
-
-        .package-features {
-            list-style: none;
-        }
-
-        .package-features li {
-            padding: 12px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 15px;
-        }
-
-        .package-card:not(.featured) .package-features li {
-            border-color: rgba(26, 58, 92, 0.08);
-        }
-
-        .package-features li:last-child {
+        .scenarios-table tr:last-child td {
             border-bottom: none;
         }
 
-        .feature-check {
-            width: 22px;
-            height: 22px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
+        .status-excellent {
+            background: #E8F5E9;
+            color: #2E7D32;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 13px;
+            display: inline-block;
+        }
+
+        .status-good {
+            background: #E3F2FD;
+            color: #1565C0;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 13px;
+            display: inline-block;
+        }
+
+        .status-acceptable {
+            background: #FFF8E1;
+            color: #F57F17;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 13px;
+            display: inline-block;
+        }
+
+        .status-optimize {
+            background: #FFEBEE;
+            color: #C62828;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 13px;
+            display: inline-block;
+        }
+
+        .scenario-note {
+            background: var(--surface);
+            border-radius: 16px;
+            padding: 30px;
+            margin-top: 40px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .note-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--gradient-accent);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 12px;
+            font-size: 24px;
             flex-shrink: 0;
         }
 
-        .package-card:not(.featured) .feature-check {
-            background: var(--success);
-            color: white;
+        .note-content h4 {
+            color: var(--primary);
+            margin-bottom: 8px;
+            font-size: 18px;
         }
 
-        /* Slide 10: CTA */
+        .note-content p {
+            color: var(--text-light);
+            font-size: 15px;
+        }
+
+        /* Slide 9: CTA */
         .slide-cta {
             background: var(--gradient-primary);
             color: var(--white);
@@ -933,7 +889,7 @@
                 </div>
             </div>
         </div>
-        <div class="slide-number">01 / 10</div>
+        <div class="slide-number">01 / 09</div>
     </section>
 
     <!-- Slide 2: Understanding -->
@@ -963,7 +919,7 @@
                 <p class="card-text">You want clear reporting on cost per lead, number of calls, and form submissions. No vanity metrics. Real business outcomes you can measure against revenue.</p>
             </div>
         </div>
-        <div class="slide-number">02 / 10</div>
+        <div class="slide-number">02 / 09</div>
     </section>
 
     <!-- Slide 3: Problem -->
@@ -991,7 +947,7 @@
                 </div>
             </div>
         </div>
-        <div class="slide-number">03 / 10</div>
+        <div class="slide-number">03 / 09</div>
     </section>
 
     <!-- Slide 4: Solution -->
@@ -1049,7 +1005,7 @@
                 </div>
             </div>
         </div>
-        <div class="slide-number">04 / 10</div>
+        <div class="slide-number">04 / 09</div>
     </section>
 
     <!-- Slide 5: Strategy -->
@@ -1100,7 +1056,7 @@
                 </ul>
             </div>
         </div>
-        <div class="slide-number">05 / 10</div>
+        <div class="slide-number">05 / 09</div>
     </section>
 
     <!-- Slide 6: Targeting -->
@@ -1175,7 +1131,7 @@
                 </div>
             </div>
         </div>
-        <div class="slide-number">06 / 10</div>
+        <div class="slide-number">06 / 09</div>
     </section>
 
     <!-- Slide 7: Case Studies -->
@@ -1205,104 +1161,71 @@
                 <div class="result-detail">May 2025 campaign delivered 103 conversions at $14.14 CPL with 12.59% conversion rate using benefit focused creative.</div>
             </div>
         </div>
-        <div class="slide-number">07 / 10</div>
+        <div class="slide-number">07 / 09</div>
     </section>
 
-    <!-- Slide 8: Projections -->
-    <section class="slide slide-projections">
-        <div class="section-tag">Projections</div>
-        <h2 class="section-title">What to Expect</h2>
+    <!-- Slide 8: Budget Scenarios -->
+    <section class="slide slide-scenarios">
+        <div class="section-tag">Budget Scenario Analysis</div>
+        <h2 class="section-title">What to Expect at Different CPL Levels</h2>
         
-        <table class="projections-table">
+        <table class="scenarios-table">
             <thead>
                 <tr>
-                    <th>Monthly Budget</th>
-                    <th>Target CPL</th>
-                    <th>Est. Leads</th>
-                    <th>Est. Consultations*</th>
-                    <th>Est. Sales**</th>
+                    <th>CPL</th>
+                    <th>Leads at $500</th>
+                    <th>Leads at $1,000</th>
+                    <th>Est. Sales*</th>
+                    <th>Status</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>$500</td>
-                    <td>$30 to $40</td>
-                    <td>12 to 17</td>
-                    <td>6 to 10</td>
-                    <td>2 to 4</td>
-                </tr>
-                <tr class="highlight">
-                    <td>$750</td>
-                    <td>$30 to $40</td>
-                    <td>18 to 25</td>
-                    <td>10 to 15</td>
-                    <td>3 to 6</td>
+                    <td>$20</td>
+                    <td>25</td>
+                    <td>50</td>
+                    <td>5 to 10</td>
+                    <td><span class="status-excellent">EXCELLENT</span></td>
                 </tr>
                 <tr>
-                    <td>$1,000</td>
-                    <td>$25 to $35</td>
-                    <td>28 to 40</td>
-                    <td>15 to 24</td>
-                    <td>4 to 8</td>
+                    <td>$30</td>
+                    <td>16</td>
+                    <td>33</td>
+                    <td>3 to 7</td>
+                    <td><span class="status-good">GOOD / TARGET</span></td>
+                </tr>
+                <tr>
+                    <td>$45</td>
+                    <td>11</td>
+                    <td>22</td>
+                    <td>2 to 4</td>
+                    <td><span class="status-acceptable">ACCEPTABLE</span></td>
+                </tr>
+                <tr>
+                    <td>$60</td>
+                    <td>8</td>
+                    <td>16</td>
+                    <td>1 to 3</td>
+                    <td><span class="status-optimize">NEEDS OPTIMIZATION</span></td>
                 </tr>
             </tbody>
         </table>
         
         <p style="margin-top: 20px; color: var(--text-light); font-size: 14px;">
-            *Based on 50 to 60% lead to consultation rate<br>
-            **Based on 25 to 35% consultation to sale rate (industry average for window treatments)
+            *Estimated sales based on 20% lead to sale conversion rate
         </p>
         
-        <div style="background: var(--surface); border-radius: 16px; padding: 30px; margin-top: 40px;">
-            <h3 style="color: var(--primary); margin-bottom: 16px;">ROI Calculation Example</h3>
-            <p style="color: var(--text-light);">
-                At $1,000/month budget with 5 sales at $1,500 average job value = <strong style="color: var(--success);">$7,500 revenue</strong> = <strong style="color: var(--success);">7.5x ROAS</strong>
-            </p>
-        </div>
-        <div class="slide-number">08 / 10</div>
-    </section>
-
-    <!-- Slide 9: Investment -->
-    <section class="slide slide-investment">
-        <div class="section-tag">Investment</div>
-        <h2 class="section-title">Monthly Packages</h2>
-        
-        <div class="investment-grid">
-            <div class="package-card">
-                <h3 class="package-name">Starter</h3>
-                <p class="package-desc">For businesses testing Meta Ads</p>
-                <div class="package-price">$400</div>
-                <div class="package-period">per month + ad spend</div>
-                <ul class="package-features">
-                    <li><span class="feature-check">&#10003;</span> Campaign setup and management</li>
-                    <li><span class="feature-check">&#10003;</span> 3 ad creatives per month</li>
-                    <li><span class="feature-check">&#10003;</span> Lead form setup</li>
-                    <li><span class="feature-check">&#10003;</span> Basic audience targeting</li>
-                    <li><span class="feature-check">&#10003;</span> Bi-weekly reporting</li>
-                    <li><span class="feature-check">&#10003;</span> Email support</li>
-                </ul>
-            </div>
-            
-            <div class="package-card featured">
-                <h3 class="package-name">Growth</h3>
-                <p class="package-desc">For serious lead generation</p>
-                <div class="package-price">$600</div>
-                <div class="package-period">per month + ad spend</div>
-                <ul class="package-features">
-                    <li><span class="feature-check">&#10003;</span> Everything in Starter</li>
-                    <li><span class="feature-check">&#10003;</span> 5 to 8 ad creatives per month</li>
-                    <li><span class="feature-check">&#10003;</span> Call and lead form campaigns</li>
-                    <li><span class="feature-check">&#10003;</span> Advanced audience testing</li>
-                    <li><span class="feature-check">&#10003;</span> Retargeting campaigns</li>
-                    <li><span class="feature-check">&#10003;</span> Weekly reporting and calls</li>
-                    <li><span class="feature-check">&#10003;</span> Landing page recommendations</li>
-                </ul>
+        <div class="scenario-note">
+            <div class="note-icon">&#128161;</div>
+            <div class="note-content">
+                <h4>Target CPL Range: $20 to $45</h4>
+                <p>Based on home services industry benchmarks for window treatments, we are targeting a CPL between $25 and $40. With optimization, we can work toward the lower end of this range while maintaining lead quality. The key is balancing volume with qualification to ensure leads convert to consultations.</p>
             </div>
         </div>
-        <div class="slide-number">09 / 10</div>
+        <div class="slide-number">08 / 09</div>
     </section>
 
-    <!-- Slide 10: CTA -->
+    <!-- Slide 9: CTA -->
     <section class="slide slide-cta">
         <div class="cta-title">Ready to Grow Your Business?</div>
         <p class="cta-subtitle">Let us help you generate more calls and high quality leads from homeowners in your service area.</p>
@@ -1321,7 +1244,7 @@
             <div class="contact-label">Your Meta Ads Specialist</div>
             <div class="contact-name">Charles Piper</div>
         </div>
-        <div class="slide-number">10 / 10</div>
+        <div class="slide-number">09 / 09</div>
     </section>
 
 </body>
